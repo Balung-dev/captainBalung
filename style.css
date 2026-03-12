@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+/* global reset */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Orbitron', monospace;
+    text-align: center;
+    margin: 0;
+    padding: 60px 20px;
+    background: radial-gradient(circle at center, #0a0a0f 0%, #1a0a2e 50%, #0d0d17 100%);
+    color: #00ffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* grid overlay for cyberpunk feel */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+    animation: flicker 3s infinite alternate, glitch 5s infinite;
+}
+
+@keyframes glitch {
+    0% { clip-path: inset(0); }
+    20% { clip-path: inset(10% 0 0 0); }
+    40% { clip-path: inset(0 0 10% 0); }
+    60% { clip-path: inset(10% 0 0 0); }
+    80% { clip-path: inset(0 0 10% 0); }
+    100% { clip-path: inset(0); }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+h2 {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* utility classes for content pages */
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(26, 26, 46, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4), inset 0 0 20px rgba(0, 255, 255, 0.1);
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 18px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    background: linear-gradient(135deg, #00ffff 0%, #ff00ff 50%, #ffff00 100%);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.6), 0 0 20px rgba(255, 0, 255, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-link::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.back-link:hover::before {
+    left: 100%;
+}
+
+.back-link:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.6);
+    animation: pulse 1s infinite;
+}
+
+.back-link:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 3px 6px rgba(0, 229, 255, 0.3);
+}
+
+
+/* main page button layout */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.button, .back-link {
+    flex: 1 1 150px;
+    max-width: 200px;
+}
+
+.button {
+    padding: 18px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    background: linear-gradient(135deg, #00ffff 0%, #ff00ff 50%, #ffff00 100%);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.6), 0 0 20px rgba(255, 0, 255, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.button:hover::before {
+    left: 100%;
+}
+
+.button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.6);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.6); }
+    50% { box-shadow: 0 8px 20px rgba(0, 255, 255, 1), 0 0 40px rgba(255, 0, 255, 0.8); }
+}
+
+.button:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 3px 6px rgba(0, 229, 255, 0.3);
+}
+
+/* small variation for project buttons */
+.button.small {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.button.small:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8), 0 0 35px rgba(0, 255, 255, 0.6);
+}
+
+
+/* project list styling (applies only on index) */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(42, 26, 46, 0.9) 100%);
+    padding: 40px 24px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4), inset 0 0 20px rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-item:hover::before {
+    left: 100%;
+}
+
+.project-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3), inset 0 0 30px rgba(0, 255, 255, 0.2);
+    border-color: rgba(0, 255, 255, 0.6);
+}
+
+.project-info {
+    text-align: left;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.project-info h2 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+}
+
+.project-info p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    p { font-size: 1.2rem; }
+    .project-item { flex-direction: column; text-align: center; }
+    .project-info { margin-right: 0; margin-bottom: 20px; }
+}
