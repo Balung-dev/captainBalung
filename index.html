@@ -5,35 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vibe Coding 專案入口</title>
     <style>
+        /* base reset */
+        * { box-sizing: border-box; }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
             text-align: center;
-            padding: 50px;
-            background-color: #f0f0f0;
+            margin: 0;
+            padding: 60px 20px;
+            background: radial-gradient(circle at top left, #0d0d17, #101025);
+            color: #eee;
         }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #00e5ff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ccc;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
         .button {
-            display: inline-block;
-            margin: 20px;
-            padding: 20px 40px;
-            font-size: 24px;
-            color: white;
-            background-color: #007bff;
+            flex: 1 1 150px;
+            max-width: 200px;
+            padding: 18px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #00e5ff 0%, #0066ff 100%);
             text-decoration: none;
-            border-radius: 10px;
-            transition: background-color 0.3s;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 229, 255, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         .button:hover {
-            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 229, 255, 0.5);
+        }
+        .button:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 6px rgba(0, 229, 255, 0.3);
+        }
+
+        /* project list rows */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1a1a2e;
+            padding: 40px 24px; /* doubled vertical padding for taller items */
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .project-info {
+            text-align: left;
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .project-info h2 {
+            margin: 0 0 8px;
+            font-size: 1.5rem;
+            color: #00e5ff; /* bright cyan for readability */
+        }
+
+        .project-info p {
+            margin: 0;
+            color: #ccc; /* light gray for contrast */
+            font-size: 1rem;
+        }
+
+        .button.small {
+            padding: 10px 22px;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
     <h1>Vibe Coding 專案入口</h1>
     <p>歡迎來到我的專案集合！點擊下方按鈕進入各專案介紹。</p>
-    <a href="project1.html" class="button">專案 1</a>
-    <a href="project2.html" class="button">專案 2</a>
-    <a href="project3.html" class="button">專案 3</a>
-    <a href="project4.html" class="button">專案 4</a>
-    <a href="project5.html" class="button">專案 5</a>
+    <div class="projects-list">
+        <div class="project-item">
+            <div class="project-info">
+                <h2>專案 1</h2>
+                <p>這裡放置專案 1 的簡短介紹，說明主要功能或目的。</p>
+            </div>
+            <a href="project1.html" class="button small">查看內容</a>
+        </div>
+        <div class="project-item">
+            <div class="project-info">
+                <h2>專案 2</h2>
+                <p>這裡放置專案 2 的簡短介紹，說明主要功能或目的。</p>
+            </div>
+            <a href="project2.html" class="button small">查看內容</a>
+        </div>
+        <div class="project-item">
+            <div class="project-info">
+                <h2>專案 3</h2>
+                <p>這裡放置專案 3 的簡短介紹，說明主要功能或目的。</p>
+            </div>
+            <a href="project3.html" class="button small">查看內容</a>
+        </div>
+        <div class="project-item">
+            <div class="project-info">
+                <h2>專案 4</h2>
+                <p>這裡放置專案 4 的簡短介紹，說明主要功能或目的。</p>
+            </div>
+            <a href="project4.html" class="button small">查看內容</a>
+        </div>
+        <div class="project-item">
+            <div class="project-info">
+                <h2>專案 5</h2>
+                <p>這裡放置專案 5 的簡短介紹，說明主要功能或目的。</p>
+            </div>
+            <a href="project5.html" class="button small">查看內容</a>
+        </div>
+    </div>
 </body>
 </html>
